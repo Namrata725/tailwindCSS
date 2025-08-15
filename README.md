@@ -119,3 +119,78 @@ It contains:
 - Any additional custom styles you have added.
 
 You link `output.css` in your HTML so the browser can apply Tailwind styles to your elements.
+
+---
+
+# First Style with Tailwind CSS
+
+## Start with a Basic Header
+
+We begin by creating a simple navigation header.  
+Below are two approaches:
+
+1. **Core CSS** – using custom styles written in a `<style>` block or `.css` file.
+2. **Tailwind CSS** – using utility classes directly in HTML.
+
+## How Tailwind CSS Works
+
+Tailwind CSS applies styles using small, single-purpose classes that correspond to specific CSS properties.  
+Instead of writing custom CSS rules, you combine utility classes in your HTML to build designs quickly.
+
+Example:
+
+```html
+<ul class="bg-black text-white m-0 flex">
+  ...
+</ul>
+```
+
+- `bg-black ` sets background color to black.
+- `text-white` sets text color to white.
+- `m-0` removes margin.
+- `flex` makes the container a flexbox.
+
+## Comparison: Core CSS vs Tailwind CSS Header
+
+**Core CSS Example** `(not-tailwind.html)`
+
+- Requires defining CSS selectors in a <style> block or .css file.
+- Styles are written once and applied to matching elements.
+- Hover effects require writing separate CSS rules.
+
+**Tailwind CSS Example** (`index.html`)
+
+- No separate CSS file needed for basic styling.
+- Styles are applied directly using Tailwind utility classes.
+- Hover effects are applied using `hover:` prefix (e.g., `hover:bg-zinc-800`).
+- Child styling can be applied using arbitrary variants like `[&>*]:flex`.
+
+**Testing the Header**
+
+- Open `not-tailwind.html` in the browser to see the plain CSS version.
+- Open `index.html` to see the Tailwind CSS version.
+- Resize the browser or inspect elements to understand how classes apply styles instantly.
+
+## Questions
+
+**How many pixels are in 1rem?**
+
+By default in most browsers,` 1rem = 16px`.
+This value is based on the root (`<html>`) font size, which can be changed via CSS.
+
+**How to apply style to a child element in Tailwind CSS?**
+
+You can use arbitrary variants with the [`&>*`] syntax.
+
+**Example:**
+
+```html
+<ul class="[&>*]:flex">
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ul>
+```
+
+This applies `display: flex` to `all direct children` of the `<ul>` element.
+
+---
