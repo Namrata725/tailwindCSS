@@ -14,7 +14,7 @@ Tailwind CSS is a utility-first CSS framework that provides a large collection o
 
 ---
 
-## Setting up Tailwind with CDN
+## a.Setting up Tailwind with CDN
 
 1. Use any code editor like **VS Code**.
 2. Create an HTML file and write basic HTML structure.
@@ -34,7 +34,7 @@ The core principle of Tailwind CSS is **"Utility-First"** — styling is done us
 
 ---
 
-# Tailwind CSS v4 Setup with CLI
+# b. Setting up Tailwind CSS v4 Setup with CLI
 
 ## Prerequisites
 
@@ -122,7 +122,7 @@ You link `output.css` in your HTML so the browser can apply Tailwind styles to y
 
 ---
 
-# First Style with Tailwind CSS
+# c. First Style with Tailwind CSS
 
 ## Start with a Basic Header
 
@@ -194,3 +194,64 @@ You can use arbitrary variants with the [`&>*`] syntax.
 This applies `display: flex` to `all direct children` of the `<ul>` element.
 
 ---
+
+# d.Working with Colors in Tailwind CSS
+
+## Apply Colors in HTML
+
+Tailwind CSS provides utility classes to quickly apply colors to different parts of your HTML:
+
+- **Text color** → `text-{color}-{shade}`
+- **Background color** → `bg-{color}-{shade}`
+- **Border color** → `border-{color}-{shade}`
+- **Outline color** → `outline-{color}-{shade}`
+
+Example:
+
+```html
+<p class="text-blue-500">This is blue text.</p>
+<p class="bg-red-500">This has a red background.</p>
+<p class="border-green-500 border-2">This has a green border.</p>
+<p class="outline-yellow-500 outline-2">This has a yellow outline.</p>
+```
+
+**How Many Colors Does Tailwind Support by Default?**
+
+- Tailwind includes a **default color palette** with common colors like `red`, `blue`, `green`, `yellow`, `gray`, `purple`, `pink`, `indigo`, `teal`, etc.
+- Each color typically has a shade range from `50` (lightest) to `950` (darkest).
+- Example: `bg-blue-50`, `bg-blue-500`, `bg-blue-950`.
+
+**Shade Ranges**
+The numeric scale represents lightness to darkness:
+
+- 50 → very light
+- 100 → lighter
+- 500 → default / mid
+- 900 → very dark
+- 950 → darkest (available for some colors)
+
+**How to Remember Color Utilities**
+
+- Text color: text-{color}-{shade}
+- Background color: bg-{color}-{shade}
+- Border color: border-{color}-{shade}
+- Outline color: outline-{color}-{shade}
+
+## Question
+
+**Which colors do not have shades in Tailwind?**
+
+`white` and `black` do not have shade variations.
+They are simply used as `text-white`, `bg-white`, `text-black`, `bg-black`, etc.
+
+**How to apply color to underline in Tailwind CSS?**
+
+You can use the `underline` class along with `decoration-{color}-{shade}` to color the underline.
+
+**example**
+
+```html
+<h1 class="underline decoration-red-500">Underlined Red Text</h1>
+```
+
+This applies a red underline to the text.
