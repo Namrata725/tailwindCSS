@@ -254,4 +254,103 @@ You can use the `underline` class along with `decoration-{color}-{shade}` to col
 <h1 class="underline decoration-red-500">Underlined Red Text</h1>
 ```
 
-This applies a red underline to the text.
+## This applies a red underline to the text.
+
+# Margin and Padding in Tailwind CSS
+
+## Applying Margin and Padding
+
+### 1. All Sides
+
+- `m-{n}` → applies margin on all sides
+- `p-{n}` → applies padding on all sides
+
+Example:
+
+```html
+<div class="m-6 p-10">...</div>
+```
+
+### 2. Vertical and Horizontal
+
+- `mx-{n}` → margin on left & right
+- `px-{n} `→ padding on left & right
+- `my-{n}` → margin on top & bottom
+- `py-{n}` → padding on top & bottom
+
+**Example:**
+
+```html
+<div class="mx-6 px-10">...</div>
+<div class="my-6 py-8">...</div>
+```
+
+### 3. Single Side
+
+- `mt-{n} / pt-{n}` → top
+- `mr-{n} / pr-{n}` → right
+- `mb-{n} / pb-{n}` → bottom
+- `ml-{n} / pl-{n}` → left
+
+**Example:**
+
+```html
+<div class="mt-8 pt-8">...</div>
+<div class="ml-8 pl-8">...</div>
+```
+
+### 4. Span with Margin & Padding
+
+- Inline `<span>` does not respect top/bottom margin and padding (because it’s inline by default).
+- Use `block` or `inline-block` to make them work.
+
+**Example:**
+
+```html
+<span class="block mt-6 pt-6">Block span</span>
+<span class="inline-block mt-6 pt-6">Inline-block span</span>
+```
+
+### 5. 1px Margin and Padding
+
+Tailwind uses a scale (multiples of `0.25rem = 4px`).
+To apply exact `1px`, use arbitrary values:
+
+**Example:**
+
+```html
+<div class="m-[1px] p-[1px]">...</div>
+```
+
+### 6. Tailwind v3 vs v4
+
+- v3 → only predefined spacing classes (`m-24`, then next is `m-28`)
+- v4 → supports arbitrary step values like `m-25`, `p-25,` or custom px values (`m-[18px]`).
+
+**Example:**
+
+```html
+<div class="m-25 p-25">Works in v4</div>
+```
+
+### Quick Reference: Spacing Scale
+
+- `1 = 0.25rem = 4px`
+- `2 = 0.5rem = 8px`
+- `3 = 0.75rem = 12px`
+- `4 = 1rem = 16px`
+- `5 = 1.25rem = 20px`
+- `6 = 1.5rem = 24px`
+- ... continues up to `96 = 24rem = 384px`
+
+## Questions
+
+**How to apply 1px margin and padding?**
+Use `m-[1px]` and `p-[1px]`.
+
+**Difference between Tailwind 3 and 4?**
+
+- Tailwind 3 - only fixed spacing scale.
+- Tailwind 4 - allows arbitrary values (`m-25`, `m-[18px]`, etc.).
+
+---
